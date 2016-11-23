@@ -5,8 +5,8 @@ import datetime; import time; import urllib2
 
 
 #dizwe
-app_id = "1605256506444167"
-app_secret = "0445bd8c69db9ecbffb324964ed8cab0"
+app_id = ""
+app_secret = ""
 access_token = app_id + "|" + app_secret
  
 #advaced information
@@ -29,13 +29,14 @@ def getFacebookPageFeedData(page_id, access_token, since,unitl):
     
     return data
 
-def getFacebookPageImage(page_id, access_token, since, unitl):
-
-    base = "https://graph.facebook.com"
-    node = "/" + page_id + "/feed"
+#def getFacebookPageImage(page_id, access_token, since, unitl):
+#
+ #   base = "https://graph.facebook.com"
+  #  node = "/" + page_id + "/feed"
     #parameters2 = "
-    time = "&since=%s&until=%s" % (since,until)
-    access = "&access_token=%s" % access_token
+
+   # time = "&since=%s&until=%s" % (since,until)
+    #access = "&access_token=%s" % access_token
     #img = base+node+
 def  request_until_suceed(url):
     req = urllib2.Request(url)
