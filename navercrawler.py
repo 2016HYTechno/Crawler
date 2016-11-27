@@ -6,7 +6,7 @@ from scrapy.crawler import CrawlerProcess
 
 class MyCrawler(scrapy.Spider):
     name = 'NAVER_STANDARD_CRAWLER'
-    start_urls = ['http://blog.naver.com/o0owldus/220865244803']
+    start_urls = ['']
     #http://blog.naver.com/hypoid613/220792561480
     #http://blog.naver.com/rlaalsckd11/220818063856
     #http://blog.naver.com/qjarl111/220819887238
