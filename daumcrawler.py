@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
 import scrapy
+import datetime, time
 from scrapy.crawler import CrawlerProcess
+
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 
 
 class MyCrawler(scrapy.Spider):
@@ -23,6 +30,12 @@ class MyCrawler(scrapy.Spider):
 
 
     #/_blog/hdn/ArticleContentsView.do?blogid
+
+    def to_id(self, value):
+        hour, minute = value.split(':')
+        today = datetime.datetime.today()
+        today.replace(hour=int(hour), minute=int(minute), microsecond=0)
+        return str(time.mktime(today.timetuple()))
 
     def parse(self, response):
 
