@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 import scrapy
-import itertools
+import datetime, time
 from scrapy.crawler import CrawlerProcess
 
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 class MyCrawler(scrapy.Spider):
     name = 'NAVER_STANDARD_CRAWLER'
-    start_urls = ['']
+    start_urls = ['http://blog.naver.com/o0owldus/220865244803']
     #http://blog.naver.com/hypoid613/220792561480
     #http://blog.naver.com/rlaalsckd11/220818063856
     #http://blog.naver.com/qjarl111/220819887238
@@ -25,6 +29,13 @@ class MyCrawler(scrapy.Spider):
 
     start_urls = real_url
     print real_url[0]
+
+    def to_id(self, value):
+        hour, minute = value.split(':')
+        today = datetime.datetime.today()
+        today.replace(hour=int(hour), minute=int(minute), microsecond=0)
+        return str(time.mktime(today.timetuple()))
+
     def parse(self, response):
 
         # text1 = response.css("div#post-view220800717202 > div img::attr(src)").extract()
