@@ -14,7 +14,7 @@ class MyCrawler(scrapy.Spider):
     name = 'daumcrawler'
 
    //after doing frame, iframe
-    start_urls = ['http://blog.daum.net/_blog/hdn/ArticleContentsView.do?blogid=0mS8T&articleno=943&looping=0&longOpen=']
+    start_urls = ['']
 
     #/_blog/hdn/ArticleContentsView.do?blogid
 
